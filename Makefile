@@ -3,10 +3,10 @@ LDLIBS = -lrt
 CC = gcc
 SOURCES_COMMON = common.c
 SOURCES_SEQ = $(SOURCES_COMMON) d2s.c
-OUT_SEQ = omp-fusion-sort-seq
+OUT_SEQ = omp-merge-sort-seq
 OBJS_SEQ = $(SOURCES_SEQ:.c=.o)
 SOURCES_PAR = $(SOURCES_COMMON) d2p.c
-OUT_PAR = omp-fusion-sort-par
+OUT_PAR = omp-merge-sort-par
 OBJS_PAR = $(SOURCES_PAR:.c=.o)
 
 all: release

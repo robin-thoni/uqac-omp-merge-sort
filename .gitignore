@@ -1,3 +1,3 @@
-omp-fusion-sort-seq
-omp-fusion-sort-par
+omp-merge-sort-seq
+omp-merge-sort-par
 *.o
