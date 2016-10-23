@@ -1,7 +1,7 @@
 CFLAGS = -Wall -Wextra -Werror -pedantic -std=c99 -fopenmp
 LDLIBS = -lrt
 CC = gcc
-SOURCES_COMMON = common.c
+SOURCES_COMMON = common.c mergeseq.c mergepar.c
 SOURCES_SEQ = $(SOURCES_COMMON) d2s.c
 OUT_SEQ = omp-merge-sort-seq
 OBJS_SEQ = $(SOURCES_SEQ:.c=.o)

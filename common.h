@@ -13,6 +13,4 @@ int* read_int_array(unsigned n);
 void read_input(int** array, unsigned* n);
 void print_array(int* array, unsigned n);
 
-void merge_sort_seq(int* array, unsigned s);
-
 #endif

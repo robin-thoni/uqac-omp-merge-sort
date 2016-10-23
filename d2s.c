@@ -1,4 +1,5 @@
 #include "common.h"
+#include "mergeseq.h"
 
 int main(void)
 {
