@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+unsigned get_cpu_count(void)
+{
+    return (unsigned)sysconf(_SC_NPROCESSORS_ONLN);
+}
+
 struct timespec get_time(void)
 {
     struct timespec start_time;
@@ -42,7 +47,9 @@ int* read_int_array(unsigned n)
 {
   int* array = (int*)malloc(n * sizeof(unsigned));
   for (unsigned i = 0; i < n; ++i) {
-    scanf("%i", &array[i]);
+    if (scanf("%i", &array[i]) == EOF) {
+      return 0;
+    }
   }
   return array;
 }
@@ -52,11 +59,18 @@ void read_input(int** array, unsigned* n)
   if (isatty(0)) {
     printf("Enter n: ");
   }
-  scanf("%u", n);
+  if (scanf("%u", n) == EOF) {
+    *array = 0;
+    *n = 0;
+    return;
+  }
   if (isatty(0)) {
     printf("Enter %u integers: ", 2 * *n);
   }
   *array = read_int_array(2 * *n);
+  if (!*array) {
+    *n = 0;
+  }
 }
 
 void print_array(int* array, unsigned n)

@@ -4,6 +4,7 @@
 #define _POSIX_C_SOURCE 199309L
 #include <time.h>
 
+unsigned get_cpu_count(void);
 struct timespec get_time(void);
 struct timespec time_diff(struct timespec* ts1, struct timespec* ts2);
 struct timespec get_duration(struct timespec* ts);
