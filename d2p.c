@@ -11,7 +11,7 @@ void merge_sort_sub_par(int* array, unsigned l, unsigned h, unsigned threads)
       #pragma omp parallel sections
       {
         #pragma omp section
-        merge_sort_sub_par(array, l, m, threads);
+        merge_sort_sub_par(array, l, m, n);
         #pragma omp section
         merge_sort_sub_par(array, m + 1, h, threads - n);
       }

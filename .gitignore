@@ -1,4 +1,3 @@
-omp-merge-sort-seq
-omp-merge-sort-par
+omp-merge-sort
 *.o
 *.swp
